@@ -1,6 +1,6 @@
 ## KrishiMitra - Let's grow together 🌾🚀
 
-KrishiMitra is an AI-driven agricultural platform designed to assist farmers with real-time insights, best farming practices, crop recommendations, weather forecasts, chat assistant and sustainable farming techniques. This platform empowers farmers with data-driven solutions to optimize productivity and ensure sustainable agriculture.
+KrishiMitra is an AI-driven agricultural platform designed to assist farmers with real-time insights, best farming practices, crop recommendations, weather forecasts, chat assistant and sustainable farming techniques.
 
 ## 🌟 Features
 - 🌾 **Crop Recommendations** – AI-powered suggestions for the best crops based on soil, climate, and season.
