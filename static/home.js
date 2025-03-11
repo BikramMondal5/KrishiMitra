@@ -1,4 +1,4 @@
-import { Chart } from "@/components/ui/chart"
+
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize the dashboard
   initializeDashboard()
@@ -25,11 +25,11 @@ function initializeDashboard() {
   const hour = new Date().getHours()
   const welcomeText = document.querySelector(".welcome-text h2")
   if (hour < 12) {
-    welcomeText.textContent = "Good morning, Rajesh!"
+    welcomeText.textContent = "Good morning, Bikram!"
   } else if (hour < 18) {
-    welcomeText.textContent = "Good afternoon, Rajesh!"
+    welcomeText.textContent = "Good afternoon, Bikram!"
   } else {
-    welcomeText.textContent = "Good evening, Rajesh!"
+    welcomeText.textContent = "Good evening, Bikram!"
   }
 }
 
