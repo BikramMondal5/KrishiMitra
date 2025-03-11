@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KrishiMitra - Smart Agricultural Platform</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header Section -->
+    <header class="header">
+      <div class="logo-container">
+        <div class="logo">
+          <i class="fa-solid fa-seedling"></i>
+        </div>
+        <h1>KrishiMitra</h1>
+      </div>
+      
+      <div class="search-container">
+        <div class="search-box">
+          <i class="fa-solid fa-search"></i>
+          <input type="text" placeholder="Search...">
+        </div>
+      </div>
+      
+      <div class="header-actions">
+        <button class="icon-btn" id="notifications-btn">
+          <i class="fa-solid fa-bell"></i>
+          <span class="notification-badge"></span>
+        </button>
+        <button class="icon-btn" id="theme-toggle">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <div class="language-selector">
+          <button class="icon-btn" id="language-btn">
+            <i class="fa-solid fa-globe"></i>
+          </button>
+          <div class="language-dropdown" id="language-dropdown">
+            <div class="language-option selected"><span>English</span> <i class="fa-solid fa-check"></i></div>
+            <div class="language-option"><span>हिन्दी (Hindi)</span></div>
+            <div class="language-option"><span>मराठी (Marathi)</span></div>
+            <div class="language-option"><span>ਪੰਜਾਬੀ (Punjabi)</span></div>
+            <div class="language-option"><span>ગુજરાતી (Gujarati)</span></div>
+            <div class="language-option"><span>বাংলা (Bengali)</span></div>
+          </div>
+        </div>
+        <div class="user-profile">
+          <img src="https://placehold.co/40x40" alt="User Profile">
+        </div>
+      </div>
+    </header>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+      <div class="welcome-text">
+        <h2>Good morning, Rajesh!</h2>
+        <p>Welcome to your KrishiMitra dashboard. Here's your farming overview.</p>
+      </div>
+      <div class="welcome-actions">
+        <button class="primary-btn">
+          <i class="fa-solid fa-flask"></i>
+          New Soil Test
+        </button>
+        <button class="secondary-btn">
+          <i class="fa-solid fa-file-lines"></i>
+          View Reports
+        </button>
+      </div>
+    </section>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+      <!-- Weather Widget -->
+      <section class="card weather-card">
+        <div class="card-header">
+          <div>
+            <h3>Weather Updates</h3>
+            <p>Lucknow, Uttar Pradesh</p>
+          </div>
+          <button class="update-btn" id="weather-update-btn">
+            <i class="fa-solid fa-rotate"></i> Update Now
+          </button>
+        </div>
+        <div class="card-tabs">
+          <button class="tab-btn active" data-tab="current">Current</button>
+          <button class="tab-btn" data-tab="forecast">5-Day Forecast</button>
+        </div>
+        <div class="card-content">
+          <div class="tab-content active" id="current-tab">
+            <div class="current-weather">
+              <div class="weather-main">
+                <div class="weather-icon">
+                  <i class="fa-solid fa-cloud"></i>
+                </div>
+                <div class="weather-info">
+                  <h2>28°C</h2>
+                  <p>Partly Cloudy</p>
+                </div>
+              </div>
+              <div class="weather-last-updated">
+                <p>Last updated</p>
+                <p>10 minutes ago</p>
+              </div>
+            </div>
+            <div class="weather-details">
+              <div class="weather-detail-item">
+                <i class="fa-solid fa-droplet"></i>
+                <div>
+                  <p>Humidity</p>
+                  <div class="progress-container">
+                    <span>65%</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 65%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="weather-detail-item">
+                <i class="fa-solid fa-wind"></i>
+                <div>
+                  <p>Wind Speed</p>
+                  <p><strong>12 km/h</strong></p>
+                </div>
+              </div>
+              <div class="weather-detail-item">
+                <i class="fa-solid fa-cloud-rain"></i>
+                <div>
+                  <p>Precipitation</p>
+                  <div class="progress-container">
+                    <span>20%</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 20%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="weather-impact">
+              <h4>Weather Impact on Crops</h4>
+              <p>Current conditions are favorable for wheat and mustard. Consider irrigation for vegetable crops due to low precipitation forecast.</p>
+            </div>
+          </div>
+          <div class="tab-content" id="forecast-tab">
+            <div class="forecast-container">
+              <div class="forecast-day">
+                <p>Today</p>
+                <i class="fa-solid fa-cloud"></i>
+                <p class="forecast-temp">28°C</p>
+                <p class="forecast-condition">Partly Cloudy</p>
+              </div>
+              <div class="forecast-day">
+                <p>Tomorrow</p>
+                <i class="fa-solid fa-sun"></i>
+                <p class="forecast-temp">30°C</p>
+                <p class="forecast-condition">Sunny</p>
+              </div>
+              <div class="forecast-day">
+                <p>Wed</p>
+                <i class="fa-solid fa-cloud-rain"></i>
+                <p class="forecast-temp">27°C</p>
+                <p class="forecast-condition">Rain</p>
+              </div>
+              <div class="forecast-day">
+                <p>Thu</p>
+                <i class="fa-solid fa-sun"></i>
+                <p class="forecast-temp">29°C</p>
+                <p class="forecast-condition">Sunny</p>
+              </div>
+              <div class="forecast-day">
+                <p>Fri</p>
+                <i class="fa-solid fa-cloud-rain"></i>
+                <p class="forecast-temp">26°C</p>
+                <p class="forecast-condition">Rain</p>
+              </div>
+            </div>
+            <div class="weather-advisory">
+              <h4>Weather Advisory</h4>
+              <p>Rain expected on Wednesday and Friday. Plan your field activities accordingly. Consider harvesting mature crops before Wednesday.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Soil Health Report -->
+      <section class="card soil-card">
+        <div class="card-header">
+          <h3>Soil Health Report</h3>
+          <button class="secondary-btn small">View Full Report</button>
+        </div>
+        <p class="card-subtitle">Last tested: 3 days ago</p>
+        <div class="card-tabs">
+          <button class="tab-btn active" data-tab="ph">pH Level</button>
+          <button class="tab-btn" data-tab="moisture">Moisture</button>
+          <button class="tab-btn" data-tab="nutrients">Nutrients</button>
+        </div>
+        <div class="card-content">
+          <div class="tab-content active" id="ph-tab">
+            <div class="gauge-container">
+              <div class="gauge">
+                <div class="gauge-value" data-value="6.8" data-min="0" data-max="14"></div>
+                <div class="gauge-center">
+                  <span class="gauge-number">6.8</span>
+                  <span class="gauge-label">pH</span>
+                </div>
+              </div>
+              <div class="gauge-info">
+                <div class="status-container">
+                  <span>Status:</span>
+                  <span class="status optimal">Optimal</span>
+                  <i class="fa-solid fa-circle-info tooltip-trigger" data-tooltip="Ideal pH range: 6.5-7.5"></i>
+                </div>
+                <p>Your soil pH is in the optimal range for most crops.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content" id="moisture-tab">
+            <div class="gauge-container">
+              <div class="gauge">
+                <div class="gauge-value" data-value="42" data-min="0" data-max="100"></div>
+                <div class="gauge-center">
+                  <span class="gauge-number">42%</span>
+                  <span class="gauge-label">Moisture</span>
+                </div>
+              </div>
+              <div class="gauge-info">
+                <div class="status-container">
+                  <span>Status:</span>
+                  <span class="status optimal">Optimal</span>
+                  <i class="fa-solid fa-circle-info tooltip-trigger" data-tooltip="Ideal moisture range: 40-60%"></i>
+                </div>
+                <p>Current moisture levels are good. No immediate irrigation needed.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content" id="nutrients-tab">
+            <div class="nutrients-container">
+              <div class="nutrient-item">
+                <div class="nutrient-header">
+                  <div>
+                    <span>Nitrogen</span>
+                    <i class="fa-solid fa-circle-info tooltip-trigger" data-tooltip="Ideal range: 40-60%"></i>
+                  </div>
+                  <span class="status slightly-low">Slightly Low</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 35%"></div>
+                </div>
+                <p class="nutrient-value">35% (Ideal: 40-60%)</p>
+              </div>
+              <div class="nutrient-item">
+                <div class="nutrient-header">
+                  <div>
+                    <span>Phosphorus</span>
+                    <i class="fa-solid fa-circle-info tooltip-trigger" data-tooltip="Ideal range: 40-60%"></i>
+                  </div>
+                  <span class="status optimal">Optimal</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 55%"></div>
+                </div>
+                <p class="nutrient-value">55% (Ideal: 40-60%)</p>
+              </div>
+              <div class="nutrient-item">
+                <div class="nutrient-header">
+                  <div>
+                    <span>Potassium</span>
+                    <i class="fa-solid fa-circle-info tooltip-trigger" data-tooltip="Ideal range: 40-70%"></i>
+                  </div>
+                  <span class="status optimal">Optimal</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 65%"></div>
+                </div>
+                <p class="nutrient-value">65% (Ideal: 40-70%)</p>
+              </div>
+              <div class="recommendation">
+                <p>Recommendation: Consider adding nitrogen-rich fertilizer for optimal crop growth.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Crop Recommendations -->
+      <section class="card crop-card">
+        <div class="card-header">
+          <h3>Crop Recommendations</h3>
+          <span class="badge ai-badge">AI Powered</span>
+        </div>
+        <p class="card-subtitle">Based on soil, climate & market</p>
+        <div class="card-content">
+          <div class="crop-recommendations">
+            <div class="crop-item">
+              <div class="crop-header">
+                <div class="crop-icon-name">
+                  <div class="crop-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                  </div>
+                  <h4>Wheat</h4>
+                </div>
+                <span class="badge high">High</span>
+              </div>
+              <div class="crop-details">
+                <div class="crop-detail">
+                  <span>Variety:</span>
+                  <span class="value">HD-2967</span>
+                </div>
+                <div class="crop-detail">
+                  <i class="fa-solid fa-thumbs-up"></i>
+                  <span>92% match</span>
+                </div>
+                <div class="crop-detail">
+                  <i class="fa-solid fa-calendar"></i>
+                  <span>Rabi season</span>
+                </div>
+              </div>
+              <button class="text-btn">
+                View Details <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+            <div class="crop-item">
+              <div class="crop-header">
+                <div class="crop-icon-name">
+                  <div class="crop-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                  </div>
+                  <h4>Mustard</h4>
+                </div>
+                <span class="badge high">High</span>
+              </div>
+              <div class="crop-details">
+                <div class="crop-detail">
+                  <span>Variety:</span>
+                  <span class="value">Pusa Bold</span>
+                </div>
+                <div class="crop-detail">
+                  <i class="fa-solid fa-thumbs-up"></i>
+                  <span>87% match</span>
+                </div>
+                <div class="crop-detail">
+                  <i class="fa-solid fa-calendar"></i>
+                  <span>Rabi season</span>
+                </div>
+              </div>
+              <button class="text-btn">
+                View Details <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+            <button class="secondary-btn full-width">View All Recommendations</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Market Price Trends -->
+      <section class="card market-card">
+        <div class="card-header">
+          <h3>Market Price Trends</h3>
+          <span class="badge live-badge">Live</span>
+        </div>
+        <p class="card-subtitle">Local mandi prices (per quintal)</p>
+        <div class="card-content">
+          <div class="price-chart" id="price-chart">
+            <!-- Chart will be rendered here by JavaScript -->
+          </div>
+          <div class="price-list">
+            <div class="price-item">
+              <div>
+                <h4>Wheat</h4>
+                <p>₹2250/quintal</p>
+              </div>
+              <div class="price-change up">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                <span>+5.2%</span>
+              </div>
+            </div>
+            <div class="price-item">
+              <div>
+                <h4>Rice</h4>
+                <p>₹3800/quintal</p>
+              </div>
+              <div class="price-change down">
+                <i class="fa-solid fa-arrow-trend-down"></i>
+                <span>-2.1%</span>
+              </div>
+            </div>
+            <div class="price-item">
+              <div>
+                <h4>Soybean</h4>
+                <p>₹4200/quintal</p>
+              </div>
+              <div class="price-change up">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                <span>+3.7%</span>
+              </div>
+            </div>
+          </div>
+          <button class="text-btn full-width">
+            View All Prices <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- Pest & Disease Alerts -->
+      <section class="card pest-card">
+        <div class="card-header">
+          <h3>Pest & Disease Alerts</h3>
+          <span class="badge alert-badge">2 New</span>
+        </div>
+        <p class="card-subtitle">AI-powered detection</p>
+        <div class="card-content">
+          <div class="alerts-container">
+            <div class="alert-item">
+              <div class="alert-header">
+                <div class="alert-icon-title">
+                  <div class="alert-icon">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                  </div>
+                  <h4>Aphids</h4>
+                </div>
+                <span class="badge medium">Medium</span>
+              </div>
+              <div class="alert-details">
+                <p><strong>Pest</strong> detected on Wheat, Mustard</p>
+                <p class="alert-time">Detected 2 days ago</p>
+              </div>
+              <div class="alert-actions">
+                <button class="secondary-btn small">
+                  <i class="fa-solid fa-camera"></i> Scan Crop
+                </button>
+                <button class="text-btn small">View Solutions</button>
+              </div>
+            </div>
+            <div class="alert-item">
+              <div class="alert-header">
+                <div class="alert-icon-title">
+                  <div class="alert-icon">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                  </div>
+                  <h4>Powdery Mildew</h4>
+                </div>
+                <span class="badge high-alert">High</span>
+              </div>
+              <div class="alert-details">
+                <p><strong>Disease</strong> detected on Wheat</p>
+                <p class="alert-time">Detected 1 day ago</p>
+              </div>
+              <div class="alert-actions">
+                <button class="secondary-btn small">
+                  <i class="fa-solid fa-camera"></i> Scan Crop
+                </button>
+                <button class="text-btn small">View Solutions</button>
+              </div>
+            </div>
+            <button class="text-btn full-width">
+              View All Alerts <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Smart Marketplace -->
+      <section class="card marketplace-card full-width">
+        <div class="card-header">
+          <div class="title-with-icon">
+            <i class="fa-solid fa-shopping-bag"></i>
+            <h3>Smart Marketplace</h3>
+          </div>
+          <button class="primary-btn">
+            <i class="fa-solid fa-shopping-bag"></i> Open Marketplace
+          </button>
+        </div>
+        <p class="card-subtitle">Buy and sell agricultural products directly</p>
+        <div class="card-tabs">
+          <button class="tab-btn active" data-tab="buy">
+            <i class="fa-solid fa-shopping-bag"></i> Buy Products
+          </button>
+          <button class="tab-btn" data-tab="sell">
+            <i class="fa-solid fa-truck"></i> Sell Your Crops
+          </button>
+        </div>
+        <div class="card-content">
+          <div class="tab-content active" id="buy-tab">
+            <div class="products-grid">
+              <div class="product-card">
+                <div class="product-image-info">
+                  <img src="https://placehold.co/80x80" alt="Organic Fertilizer">
+                  <div>
+                    <h4>Organic Fertilizer</h4>
+                    <span class="badge category">Fertilizers</span>
+                  </div>
+                </div>
+                <div class="product-details">
+                  <div class="product-price">
+                    <p class="price">₹850</p>
+                    <p class="unit">per 50 kg bag</p>
+                  </div>
+                  <div class="product-rating">
+                    <div class="stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="seller">AgroOrganics</p>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="secondary-btn small">Details</button>
+                  <button class="primary-btn small">Add to Cart</button>
+                </div>
+              </div>
+              <div class="product-card">
+                <div class="product-image-info">
+                  <img src="https://placehold.co/80x80" alt="HD-2967 Wheat Seeds">
+                  <div>
+                    <h4>HD-2967 Wheat Seeds</h4>
+                    <span class="badge category">Seeds</span>
+                  </div>
+                </div>
+                <div class="product-details">
+                  <div class="product-price">
+                    <p class="price">₹1200</p>
+                    <p class="unit">per 40 kg bag</p>
+                  </div>
+                  <div class="product-rating">
+                    <div class="stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="seller">KisanSeeds</p>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="secondary-btn small">Details</button>
+                  <button class="primary-btn small">Add to Cart</button>
+                </div>
+              </div>
+              <div class="product-card">
+                <div class="product-image-info">
+                  <img src="https://placehold.co/80x80" alt="Tractor Rental">
+                  <div>
+                    <h4>Tractor Rental</h4>
+                    <span class="badge category">Equipment</span>
+                  </div>
+                </div>
+                <div class="product-details">
+                  <div class="product-price">
+                    <p class="price">₹1500</p>
+                    <p class="unit">per day</p>
+                  </div>
+                  <div class="product-rating">
+                    <div class="stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                    <p class="seller">FarmEquip</p>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="secondary-btn small">Details</button>
+                  <button class="primary-btn small">Add to Cart</button>
+                </div>
+              </div>
+              <div class="product-card">
+                <div class="product-image-info">
+                  <img src="https://placehold.co/80x80" alt="Pesticide Sprayer">
+                  <div>
+                    <h4>Pesticide Sprayer</h4>
+                    <span class="badge category">Equipment</span>
+                  </div>
+                </div>
+                <div class="product-details">
+                  <div class="product-price">
+                    <p class="price">₹3200</p>
+                    <p class="unit">each</p>
+                  </div>
+                  <div class="product-rating">
+                    <div class="stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                    <p class="seller">AgriTools</p>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="secondary-btn small">Details</button>
+                  <button class="primary-btn small">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+            <div class="center-btn">
+              <button class="secondary-btn">View All Products</button>
+            </div>
+          </div>
+          <div class="tab-content" id="sell-tab">
+            <div class="selling-grid">
+              <div class="selling-card">
+                <div class="product-image-info">
+                  <img src="https://placehold.co/80x80" alt="Premium Wheat">
+                  <div>
+                    <h4>Premium Wheat</h4>
+                    <div class="badge-container">
+                      <span class="badge category">Grains</span>
+                      <span class="badge quality">Grade A</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="selling-details">
+                  <div class="selling-info">
+                    <p>Price:</p>
+                    <p class="value">₹2250/quintal</p>
+                  </div>
+                  <div class="selling-info">
+                    <p>Quantity:</p>
+                    <p class="value">50 quintals</p>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="secondary-btn small">Edit Listing</button>
+                  <button class="primary-btn small">View Offers</button>
+                </div>
+              </div>
+              <div class="selling-card">
+                <div class="product-image-info">
+                  <img src="https://placehold.co/80x80" alt="Organic Vegetables">
+                  <div>
+                    <h4>Organic Vegetables</h4>
+                    <div class="badge-container">
+                      <span class="badge category">Vegetables</span>
+                      <span class="badge quality">Organic</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="selling-details">
+                  <div class="selling-info">
+                    <p>Price:</p>
+                    <p class="value">₹3500/quintal</p>
+                  </div>
+                  <div class="selling-info">
+                    <p>Quantity:</p>
+                    <p class="value">10 quintals</p>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="secondary-btn small">Edit Listing</button>
+                  <button class="primary-btn small">View Offers</button>
+                </div>
+              </div>
+            </div>
+            <div class="add-listing-box">
+              <h3>List Your Crops for Sale</h3>
+              <p>Connect directly with buyers and get the best prices for your produce.</p>
+              <button class="primary-btn">Add New Listing</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Community Forum -->
+      <section class="card community-card">
+        <div class="card-header">
+          <div class="title-with-icon">
+            <i class="fa-solid fa-message"></i>
+            <h3>Community & Knowledge Hub</h3>
+          </div>
+          <button class="primary-btn">Create Post</button>
+        </div>
+        <p class="card-subtitle">Connect with fellow farmers and access farming guides</p>
+        <div class="card-tabs">
+          <button class="tab-btn active" data-tab="discussions">
+            <i class="fa-solid fa-message"></i> Discussions
+          </button>
+          <button class="tab-btn" data-tab="articles">
+            <i class="fa-solid fa-book-open"></i> Knowledge Articles
+          </button>
+        </div>
+        <div class="card-content">
+          <div class="tab-content active" id="discussions-tab">
+            <div class="discussions-list">
+              <div class="discussion-item">
+                <div class="discussion-avatar">
+                  <img src="https://placehold.co/40x40" alt="Ramesh Kumar">
+                </div>
+                <div class="discussion-content">
+                  <h4>Best practices for wheat cultivation in sandy soil?</h4>
+                  <div class="discussion-meta">
+                    <span class="author">Ramesh Kumar</span>
+                    <span class="separator">•</span>
+                    <span class="time">2 hours ago</span>
+                    <div class="discussion-stats">
+                      <span><i class="fa-solid fa-message"></i> 8</span>
+                      <span><i class="fa-solid fa-eye"></i> 42</span>
+                      <span><i class="fa-solid fa-thumbs-up"></i> 12</span>
+                    </div>
+                  </div>
+                  <div class="discussion-tags">
+                    <span class="tag">Wheat</span>
+                    <span class="tag">Soil Management</span>
+                  </div>
+                </div>
+              </div>
+              <div class="discussion-item">
+                <div class="discussion-avatar">
+                  <img src="https://placehold.co/40x40" alt="Sunita Devi">
+                </div>
+                <div class="discussion-content">
+                  <h4>How to deal with aphid infestation in mustard crops?</h4>
+                  <div class="discussion-meta">
+                    <span class="author">Sunita Devi</span>
+                    <span class="separator">•</span>
+                    <span class="time">1 day ago</span>
+                    <div class="discussion-stats">
+                      <span><i class="fa-solid fa-message"></i> 15</span>
+                      <span><i class="fa-solid fa-eye"></i> 87</span>
+                      <span><i class="fa-solid fa-thumbs-up"></i> 23</span>
+                    </div>
+                  </div>
+                  <div class="discussion-tags">
+                    <span class="tag">Pest Control</span>
+                    <span class="tag">Mustard</span>
+                  </div>
+                </div>
+              </div>
+              <button class="text-btn full-width">
+                View All Discussions <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="tab-content" id="articles-tab">
+            <div class="articles-list">
+              <div class="article-item">
+                <img src="https://placehold.co/120x80" alt="Sustainable Farming" class="article-image">
+                <div class="article-content">
+                  <div class="article-meta">
+                    <span class="badge category">Sustainable Farming</span>
+                    <span class="read-time">5 min read</span>
+                  </div>
+                  <h4>Sustainable Farming Practices for Small Farmers</h4>
+                  <p>Learn how to implement sustainable farming practices that are cost-effective and environmentally friendly.</p>
+                </div>
+              </div>
+              <div class="article-item">
+                <img src="https://placehold.co/120x80" alt="Soil Health" class="article-image">
+                <div class="article-content">
+                  <div class="article-meta">
+                    <span class="badge category">Soil Management</span>
+                    <span class="read-time">8 min read</span>
+                  </div>
+                  <h4>Understanding Soil Health: A Comprehensive Guide</h4>
+                  <p>Dive deep into soil health indicators and how to improve your soil quality naturally.</p>
+                </div>
+              </div>
+              <div class="knowledge-hub-box">
+                <h3>Knowledge Hub</h3>
+                <p>Access farming guides, videos, and expert advice to improve your farming practices.</p>
+                <button class="secondary-btn">Explore Knowledge Hub</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Smart Farming Tools -->
+      <section class="card tools-card">
+        <div class="card-header">
+          <h3>Smart Farming Tools</h3>
+        </div>
+        <p class="card-subtitle">AI-powered tools to improve farming</p>
+        <div class="card-content">
+          <div class="tools-list">
+            <button class="tool-item">
+              <div class="tool-icon purple">
+                <i class="fa-solid fa-flask"></i>
+              </div>
+              <div class="tool-info">
+                <h4>Soil Test Tool</h4>
+                <p>Get AI-driven crop & fertilizer recommendations</p>
+              </div>
+            </button>
+            <button class="tool-item">
+              <div class="tool-icon green">
+                <i class="fa-solid fa-calendar"></i>
+              </div>
+              <div class="tool-info">
+                <h4>Crop Calendar</h4>
+                <p>Seasonal planting guides and reminders</p>
+              </div>
+            </button>
+            <button class="tool-item">
+              <div class="tool-icon blue">
+                <i class="fa-solid fa-chart-bar"></i>
+              </div>
+              <div class="tool-info">
+                <h4>Yield Prediction</h4>
+                <p>Estimate crop output using AI</p>
+              </div>
+            </button>
+            <button class="tool-item">
+              <div class="tool-icon amber">
+                <i class="fa-solid fa-camera"></i>
+              </div>
+              <div class="tool-info">
+                <h4>Crop Scanner</h4>
+                <p>Identify pests & diseases with your camera</p>
+              </div>
+            </button>
+            <button class="tool-item">
+              <div class="tool-icon cyan">
+                <i class="fa-solid fa-droplet"></i>
+              </div>
+              <div class="tool-info">
+                <h4>Irrigation Planner</h4>
+                <p>Optimize water usage for your crops</p>
+              </div>
+            </button>
+            <button class="text-btn full-width">
+              View All Tools <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Notifications Panel -->
+      <section class="card notifications-card full-width">
+        <div class="card-header">
+          <div class="title-with-icon">
+            <i class="fa-solid fa-bell"></i>
+            <h3>Notifications & Alerts</h3>
+          </div>
+          <button class="secondary-btn">Mark All as Read</button>
+        </div>
+        <p class="card-subtitle">Stay updated with important farming information</p>
+        <div class="card-tabs">
+          <button class="tab-btn active" data-tab="market-updates">
+            <i class="fa-solid fa-arrow-trend-up"></i> Market Updates
+          </button>
+          <button class="tab-btn" data-tab="farming-tips">
+            <i class="fa-solid fa-lightbulb"></i> Farming Tips
+          </button>
+          <button class="tab-btn" data-tab="task-reminders">
+            <i class="fa-solid fa-clock"></i> Task Reminders
+          </button>
+        </div>
+        <div class="card-content">
+          <div class="tab-content active" id="market-updates-tab">
+            <div class="notifications-grid">
+              <div class="notification-item">
+                <div class="notification-icon green">
+                  <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-header">
+                    <h4>Wheat prices increased by 5%</h4>
+                    <span class="badge new-badge">New</span>
+                  </div>
+                  <p>Market prices for wheat have increased in your region</p>
+                  <div class="notification-footer">
+                    <span class="time">2 hours ago</span>
+                    <button class="text-btn small">Details</button>
+                  </div>
+                </div>
+              </div>
+              <div class="notification-item">
+                <div class="notification-icon blue">
+                  <i class="fa-solid fa-file-lines"></i>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-header">
+                    <h4>New MSP announced for Rabi crops</h4>
+                  </div>
+                  <p>Government has announced new Minimum Support Prices</p>
+                  <div class="notification-footer">
+                    <span class="time">1 day ago</span>
+                    <button class="text-btn small">Details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="text-btn full-width">
+              View All Market Updates <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+          <div class="tab-content" id="farming-tips-tab">
+            <div class="notifications-grid">
+              <div class="notification-item">
+                <div class="notification-icon amber">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-header">
+                    <h4>Ideal time to apply fertilizer</h4>
+                    <span class="badge new-badge">New</span>
+                  </div>
+                  <p>Based on soil moisture and weather forecast, today is ideal for fertilizer application</p>
+                  <div class="notification-footer">
+                    <span class="time">3 hours ago</span>
+                    <button class="text-btn small">Apply</button>
+                  </div>
+                </div>
+              </div>
+              <div class="notification-item">
+                <div class="notification-icon amber">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-header">
+                    <h4>Irrigation recommendation</h4>
+                  </div>
+                  <p>Your wheat crop needs irrigation in the next 2 days based on soil moisture levels</p>
+                  <div class="notification-footer">
+                    <span class="time">1 day ago</span>
+                    <button class="text-btn small">Apply</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="text-btn full-width">
+              View All Farming Tips <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+          <div class="tab-content" id="task-reminders-tab">
+            <div class="notifications-grid">
+              <div class="notification-item">
+                <div class="notification-icon purple">
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-header">
+                    <h4>Soil testing due</h4>
+                    <span class="badge new-badge">New</span>
+                  </div>
+                  <p>Your quarterly soil testing is due this week</p>
+                  <div class="notification-footer">
+                    <span class="time">Due in 3 days</span>
+                    <button class="text-btn small">Schedule</button>
+                  </div>
+                </div>
+              </div>
+              <div class="notification-item">
+                <div class="notification-icon green">
+                  <i class="fa-solid fa-check-circle"></i>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-header">
+                    <h4>Pesticide application completed</h4>
+                  </div>
+                  <p>You marked pesticide application as complete</p>
+                  <div class="notification-footer">
+                    <span class="time">Completed yesterday</span>
+                    <button class="text-btn small">View</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="text-btn full-width">
+              View All Tasks <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bhumi AI Assistant -->
+    <div class="bhumi-container" id="bhumi-container">
+      <div class="bhumi-chat" id="bhumi-chat">
+        <div class="bhumi-header">
+          <div class="bhumi-avatar-info">
+            <div class="bhumi-avatar">
+              <img src="https://placehold.co/32x32" alt="Bhumi">
+            </div>
+            <div>
+              <h3>Bhumi</h3>
+              <p>AI Farming Assistant</p>
+            </div>
+          </div>
+          <div class="bhumi-actions">
+            <button class="icon-btn" id="bhumi-minimize">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+            <button class="icon-btn" id="bhumi-close">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+        <div class="bhumi-messages" id="bhumi-messages">
+          <div class="message assistant">
+            <div class="message-avatar">
+              <img src="https://placehold.co/32x32" alt="Bhumi">
+            </div>
+            <div class="message-bubble">
+              <p>Hello! I'm Bhumi, your AI farming assistant. How can I help you today?</p>
+            </div>
+          </div>
+          <div class="message user">
+            <div class="message-bubble">
+              <p>When should I plant wheat in Uttar Pradesh?</p>
+            </div>
+            <div class="message-avatar">
+              <img src="https://placehold.co/32x32" alt="User">
+            </div>
+          </div>
+          <div class="message assistant">
+            <div class="message-avatar">
+              <img src="https://placehold.co/32x32" alt="Bhumi">
+            </div>
+            <div class="message-bubble">
+              <p>In Uttar Pradesh, the ideal time to plant wheat is from late October to mid-November. This timing allows the crop to establish before winter and benefit from the cooler temperatures during the growing season.</p>
+            </div>
+          </div>
+        </div>
+        <div class="bhumi-input">
+          <input type="text" placeholder="Ask Bhumi a question..." id="bhumi-input-field">
+          <button class="icon-btn" id="bhumi-voice">
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+          <button class="icon-btn" id="bhumi-send">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+      <div class="bhumi-minimized" id="bhumi-minimized">
+        <div class="bhumi-avatar">
+          <img src="https://placehold.co/32x32" alt="Bhumi">
+        </div>
+        <div>
+          <h3>Bhumi</h3>
+          <p>AI Assistant</p>
+        </div>
+        <button class="icon-btn" id="bhumi-maximize">
+          <i class="fa-solid fa-maximize"></i>
+        </button>
+        <button class="icon-btn" id="bhumi-close-min">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <button class="bhumi-button" id="bhumi-toggle">
+        <i class="fa-solid fa-robot"></i>
+      </button>
+    </div>
+
+    <!-- Tooltip Container -->
+    <div class="tooltip" id="tooltip">
+      <div class="tooltip-content"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="{{ url_for('static', filename='home.js') }}"></script>
+
+</body>
+</html>
+
