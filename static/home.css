@@ -1857,4 +1857,14 @@
     border-width: 0;
   }
   
-  
+#userProfile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    background-color: #70D6FF;
+}
+#weather-heading{
+    color: #F39C12;
+}

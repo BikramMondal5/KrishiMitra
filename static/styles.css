@@ -563,3 +563,19 @@ img {
         grid-template-columns: repeat(4, 1fr);
     }
 }
+.testimonial-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+}
+#r-letter{
+    background-color: #E8EC67;
+}
+#L-letter{
+    background-color: #FF70A6;
+}
+#B-letter{
+    background-color: #70D6FF;
+}
