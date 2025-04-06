@@ -16,7 +16,6 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
-app.secret_key = os.environ.get("SESSION_SECRET", "default-secret-key")
 
 # Configure Google Gemini API Key securely
 API_KEY = os.environ.get("gemini-api")  # Use an environment variable
