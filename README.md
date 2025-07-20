@@ -43,5 +43,7 @@ pip install -r requirements.txt
 ## 🤝 Contributing
 Contributions are welcome! Feel free to open an issue or submit a pull request to enhance KrishiMitra.
 
+- **Present Contributors (In alphabetical order)**: 1. `Bikram Mondal, Ideate & Development` 2. `Rakesh Adak, Ideate`
+
 ## 📜 License
 This project is licensed under the `MIT License`. See the [LICENSE](LICENSE) file for more details.
